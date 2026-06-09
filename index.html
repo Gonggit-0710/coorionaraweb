@@ -934,22 +934,37 @@
        RESPONSIVE — 1024px (tablet)
     ══════════════════════════════════════ */
     @media (max-width: 1024px) {
-      .hero { grid-template-columns: 1fr; }
-      .hero-image, .hero-scroll-hint { display: none; }
+      /* Hero: 이미지 위 → 텍스트 아래 세로 스택 */
+      .hero {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        min-height: 100svh;
+      }
+      .hero-image {
+        display: block;
+        order: -1;
+        height: 56vw;
+        min-height: 280px;
+        max-height: 440px;
+        overflow: hidden;
+      }
+      .hero-product-img {
+        min-height: unset !important;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center top;
+        padding: 0;
+        background: none;
+      }
+      .hero-badge { display: none; }
+      .hero-scroll-hint { display: none; }
       .hero-text {
-        min-height: calc(100svh - var(--nav-h));
-        padding: 3rem clamp(1.5rem, 6vw, 4rem);
-        justify-content: flex-end;
-        padding-bottom: 4rem;
+        min-height: auto;
+        padding: 2.5rem clamp(1.5rem, 6vw, 3rem) 3.5rem;
+        justify-content: flex-start;
       }
-      /* Full-bleed hero background gradient on mobile */
-      .hero-text::before {
-        content: '';
-        position: fixed;
-        inset: 0;
-        background: linear-gradient(160deg, var(--bg) 50%, var(--pink) 100%);
-        z-index: -1;
-      }
+      .hero-text::before { display: none; }
 
       .story-grid { grid-template-columns: 1fr; }
       .story-image-wrap { display: none; }
