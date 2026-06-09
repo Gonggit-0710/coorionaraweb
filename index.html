@@ -129,6 +129,34 @@
 
     .divider { width: 36px; height: 1px; background: var(--beige); margin: 1.5rem 0; }
 
+    /* ── Real product images ── */
+    .product-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 12%;
+      background: var(--white);
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .product-card:hover .product-img img { transform: scale(1.06); }
+    .feat-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 6%;
+      background: var(--white);
+      display: block;
+    }
+    .hero-product-img {
+      width: 100%;
+      height: 100%;
+      min-height: 640px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
     /* ══════════════════════════════════════
        NAVIGATION
     ══════════════════════════════════════ */
@@ -1021,9 +1049,9 @@
     </div>
   </div>
   <div class="hero-image">
-    <div class="ph" style="height:100%; min-height:640px;">
-      <p class="hero-ph-label">제품 사진 영역<br/>Product Photography</p>
-    </div>
+    <img src="hero%20image2.jpeg"
+         alt="Coorionara – Korean Skincare"
+         class="hero-product-img" />
     <div class="hero-badge">
       <div class="hero-badge-num">200<sup>%</sup></div>
       <div class="hero-badge-label" data-i18n="hero.badge"></div>
@@ -1105,10 +1133,11 @@
     </div>
 
     <div class="products-grid">
-      <!-- Product 1 -->
+      <!-- Product 1: 花样年华赋活系列 -->
       <div class="product-card reveal">
         <div class="product-img">
-          <div class="ph"><span class="ph-label">수분 라인 / Hydration</span></div>
+          <img src="产品白底图/花样年华赋活系列/1%20拷贝.png"
+               alt="花样年华赋活系列 – Floral Revitalizing Series" />
         </div>
         <div class="product-meta">
           <div>
@@ -1118,10 +1147,11 @@
           <span class="product-tag" data-i18n="products.tag.best"></span>
         </div>
       </div>
-      <!-- Product 2 -->
+      <!-- Product 2: 桃颜悦色美白系列 -->
       <div class="product-card reveal reveal-d1">
         <div class="product-img">
-          <div class="ph" style="background:var(--pink);"><span class="ph-label">브라이트닝 / Brightening</span></div>
+          <img src="产品白底图/桃颜悦色美白系列/1.png"
+               alt="桃颜悦色美白系列 – Brightening Series" />
         </div>
         <div class="product-meta">
           <div>
@@ -1130,10 +1160,11 @@
           </div>
         </div>
       </div>
-      <!-- Product 3 -->
+      <!-- Product 3: 凝萃芳华抗皱系列 -->
       <div class="product-card reveal reveal-d2">
         <div class="product-img">
-          <div class="ph" style="filter:saturate(0.4);"><span class="ph-label">배리어 / Barrier</span></div>
+          <img src="产品白底图/凝萃芳华抗皱系列/综合%20拷贝.png"
+               alt="凝萃芳华抗皱系列 – Anti-Aging Series" />
         </div>
         <div class="product-meta">
           <div>
@@ -1143,12 +1174,52 @@
           <span class="product-tag new" data-i18n="products.tag.new"></span>
         </div>
       </div>
+      <!-- Product 4: 清洁调肌 -->
+      <div class="product-card reveal">
+        <div class="product-img">
+          <img src="产品白底图/清洁调肌/1%20拷贝.png"
+               alt="清洁调肌 – Cleansing & Toning" />
+        </div>
+        <div class="product-meta">
+          <div>
+            <p class="product-name" data-i18n="products.p4.name"></p>
+            <p class="product-sub"  data-i18n="products.p4.sub"></p>
+          </div>
+        </div>
+      </div>
+      <!-- Product 5: 肽魅力眼霜 -->
+      <div class="product-card reveal reveal-d1">
+        <div class="product-img">
+          <img src="产品白底图/肽魅力眼霜/肽魅力眼霜.png"
+               alt="肽魅力眼霜 – Peptide Eye Cream" />
+        </div>
+        <div class="product-meta">
+          <div>
+            <p class="product-name" data-i18n="products.p5.name"></p>
+            <p class="product-sub"  data-i18n="products.p5.sub"></p>
+          </div>
+        </div>
+      </div>
+      <!-- Product 6: 鲟鱼子酱舒缓系列 -->
+      <div class="product-card reveal reveal-d2">
+        <div class="product-img">
+          <img src="产品白底图/鲟鱼子酱舒缓系列/精华液/1.png"
+               alt="鲟鱼子酱舒缓系列 – Caviar Soothing Series" />
+        </div>
+        <div class="product-meta">
+          <div>
+            <p class="product-name" data-i18n="products.p6.name"></p>
+            <p class="product-sub"  data-i18n="products.p6.sub"></p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Featured Set -->
     <div class="products-feature">
       <div class="feat-img reveal">
-        <div class="ph"><span class="ph-label">Collection Flat-lay</span></div>
+        <img src="产品白底图/膜焕新生/1%20拷贝.png"
+             alt="膜焕新生 – Renewal Mask Series" />
       </div>
       <div class="feat-text reveal reveal-d1">
         <p class="section-kicker" data-i18n="products.feat.kicker"></p>
@@ -1371,18 +1442,24 @@ const T = {
     "products.kicker":   "Product Collection",
     "products.h2":       "Crafted for <em>every</em><br/>skin story.",
     "products.viewAll":  "View All Products →",
-    "products.p1.name":  "Deep Moisture Serum",
-    "products.p1.sub":   "Hydration Line · 30ml",
-    "products.p2.name":  "Glow Essence Toner",
-    "products.p2.sub":   "Brightening Line · 150ml",
-    "products.p3.name":  "Barrier Repair Cream",
-    "products.p3.sub":   "Barrier Care · 50ml",
+    "products.p1.name":  "Floral Revitalizing Series",
+    "products.p1.sub":   "花样年华赋活系列",
+    "products.p2.name":  "Peach Glow Brightening Series",
+    "products.p2.sub":   "桃颜悦色美白系列",
+    "products.p3.name":  "Floral Anti-Aging Series",
+    "products.p3.sub":   "凝萃芳华抗皱系列",
+    "products.p4.name":  "Cleansing & Balancing",
+    "products.p4.sub":   "清洁调肌系列",
+    "products.p5.name":  "Peptide Eye Cream",
+    "products.p5.sub":   "肽魅力眼霜 · 30g",
+    "products.p6.name":  "Caviar Soothing Series",
+    "products.p6.sub":   "鲟鱼子酱舒缓系列",
     "products.tag.best": "Best",
     "products.tag.new":  "New",
-    "products.feat.kicker": "Signature Series",
-    "products.feat.h3":  "The Blank Canvas<br/>Ritual Set",
-    "products.feat.body":"Our complete three-step morning ritual — designed around the principle of intentional minimalism. Each product amplifies the next, letting your skin reach its natural equilibrium.",
-    "products.feat.cta": "Discover the Set →",
+    "products.feat.kicker": "Renewal Collection",
+    "products.feat.h3":  "膜焕新生<br/>Renewal Mask Series",
+    "products.feat.body":"A complete renewal ritual inspired by Korean 여백 philosophy — stripping away excess to reveal your skin's natural radiance. Powered by fermented botanicals and barrier-strengthening actives.",
+    "products.feat.cta": "Explore the Series →",
 
     "ing.kicker": "Core Ingredients",
     "ing.h2":     "What goes <em>in</em><br/>is what comes <em>out.</em>",
@@ -1428,8 +1505,8 @@ const T = {
     "footer.col1.l1": "Our Story",     "footer.col1.l2": "Philosophy",
     "footer.col1.l3": "Ingredients",   "footer.col1.l4": "Sustainability",
     "footer.col2.title":   "Products",
-    "footer.col2.l1": "Hydration Line","footer.col2.l2": "Brightening Line",
-    "footer.col2.l3": "Barrier Line",  "footer.col2.l4": "Sets & Kits",
+    "footer.col2.l1": "Revitalizing Series","footer.col2.l2": "Brightening Series",
+    "footer.col2.l3": "Anti-Aging Series",  "footer.col2.l4": "Caviar Soothing",
     "footer.col3.title":   "Info",
     "footer.col3.l1": "Company News",  "footer.col3.l2": "Stockists",
     "footer.col3.l3": "Contact",       "footer.col3.l4": "Privacy Policy",
@@ -1466,14 +1543,17 @@ const T = {
     "products.kicker": "제품 컬렉션",
     "products.h2":      "<em>모든</em> 피부 이야기를<br/>위해 만들었습니다.",
     "products.viewAll": "전체 제품 보기 →",
-    "products.p1.name": "딥 모이스처 세럼","products.p1.sub": "수분 라인 · 30ml",
-    "products.p2.name": "글로우 에센스 토너","products.p2.sub": "브라이트닝 라인 · 150ml",
-    "products.p3.name": "배리어 리페어 크림","products.p3.sub": "장벽 케어 · 50ml",
+    "products.p1.name": "화양연화 부활 시리즈","products.p1.sub": "花样年华赋活系列",
+    "products.p2.name": "복숭아빛 미백 시리즈","products.p2.sub": "桃颜悦色美白系列",
+    "products.p3.name": "화정 항노화 시리즈","products.p3.sub": "凝萃芳华抗皱系列",
+    "products.p4.name": "클렌징 조율 라인","products.p4.sub": "清洁调肌系列",
+    "products.p5.name": "펩타이드 아이 크림","products.p5.sub": "肽魅力眼霜 · 30g",
+    "products.p6.name": "캐비아 진정 시리즈","products.p6.sub": "鲟鱼子酱舒缓系列",
     "products.tag.best": "베스트","products.tag.new": "신제품",
-    "products.feat.kicker": "시그니처 시리즈",
-    "products.feat.h3":  "블랭크 캔버스<br/>리추얼 세트",
-    "products.feat.body":"의도적 미니멀리즘을 원칙으로 설계된 완벽한 3단계 아침 리추얼입니다. 각 제품이 다음을 강화하여 피부가 자연스러운 균형을 찾도록 합니다.",
-    "products.feat.cta": "세트 자세히 보기 →",
+    "products.feat.kicker": "리뉴얼 컬렉션",
+    "products.feat.h3":  "膜焕新生<br/>모 환신생 마스크 시리즈",
+    "products.feat.body":"여백(餘白)의 철학에서 영감을 받은 완벽한 리뉴얼 의식입니다. 불필요한 것을 걷어내고 피부 본연의 빛을 드러냅니다. 발효 식물 성분과 장벽 강화 액티브로 구성되었습니다.",
+    "products.feat.cta": "시리즈 자세히 보기 →",
 
     "ing.kicker": "핵심 성분",
     "ing.h2":     "넣는 것이<br/><em>나오는 것</em>입니다.",
@@ -1507,7 +1587,7 @@ const T = {
     "footer.col1.title":"브랜드",
     "footer.col1.l1":"브랜드 스토리","footer.col1.l2":"철학","footer.col1.l3":"성분","footer.col1.l4":"지속가능성",
     "footer.col2.title":"제품",
-    "footer.col2.l1":"수분 라인","footer.col2.l2":"브라이트닝 라인","footer.col2.l3":"배리어 라인","footer.col2.l4":"세트 & 키트",
+    "footer.col2.l1":"화양연화 부활 시리즈","footer.col2.l2":"복숭아빛 미백 시리즈","footer.col2.l3":"화정 항노화 시리즈","footer.col2.l4":"캐비아 진정 시리즈",
     "footer.col3.title":"정보",
     "footer.col3.l1":"회사 소식","footer.col3.l2":"판매처","footer.col3.l3":"문의","footer.col3.l4":"개인정보처리방침",
     "footer.copy":"© 2026 珂莉安娜 코리오나라. 모든 권리 보유.",
@@ -1533,14 +1613,17 @@ const T = {
     "story.stat1":"核心植物成分","story.stat2":"有害添加剂","story.stat3":"产品系列","story.stat4":"支持语言",
 
     "products.kicker":"产品系列","products.h2":"为<em>每一种</em><br/>肌肤故事而生。","products.viewAll":"查看全部产品 →",
-    "products.p1.name":"深层补水精华","products.p1.sub":"水润系列 · 30ml",
-    "products.p2.name":"光采精华水","products.p2.sub":"亮肤系列 · 150ml",
-    "products.p3.name":"屏障修护面霜","products.p3.sub":"屏障修护 · 50ml",
+    "products.p1.name":"花样年华赋活系列","products.p1.sub":"赋活 · 多品",
+    "products.p2.name":"桃颜悦色美白系列","products.p2.sub":"美白 · 多品",
+    "products.p3.name":"凝萃芳华抗皱系列","products.p3.sub":"抗皱 · 多品",
+    "products.p4.name":"清洁调肌系列","products.p4.sub":"洁肤 · 调理",
+    "products.p5.name":"肽魅力眼霜","products.p5.sub":"眼部护理 · 30g",
+    "products.p6.name":"鲟鱼子酱舒缓系列","products.p6.sub":"舒缓 · 多品",
     "products.tag.best":"热销","products.tag.new":"新品",
-    "products.feat.kicker":"明星系列",
-    "products.feat.h3":"空白画布<br/>护肤礼盒",
-    "products.feat.body":"以极简主义为原则设计的完整三步晨间护肤仪式。每款产品相互增效，让您的肌肤达到自然平衡。",
-    "products.feat.cta":"查看套装详情 →",
+    "products.feat.kicker":"焕新系列",
+    "products.feat.h3":"膜焕新生<br/>焕肤面膜系列",
+    "products.feat.body":"以韩国留白哲学为灵感，剥去多余，唤醒肌肤本来的光彩。融合发酵植物精华与屏障修护活性成分，给肌肤真正的焕新体验。",
+    "products.feat.cta":"查看系列详情 →",
 
     "ing.kicker":"核心成分","ing.h2":"投入什么，<br/>就<em>收获</em>什么。","ing.link":"查看完整配方详情 →",
     "ing.i1.name":"积雪草<br/><em>提取物</em>","ing.i1.origin":"韩国济州岛",
@@ -1571,7 +1654,7 @@ const T = {
     "footer.col1.title":"品牌",
     "footer.col1.l1":"品牌故事","footer.col1.l2":"品牌哲学","footer.col1.l3":"成分","footer.col1.l4":"可持续发展",
     "footer.col2.title":"产品",
-    "footer.col2.l1":"水润系列","footer.col2.l2":"亮肤系列","footer.col2.l3":"屏障修护系列","footer.col2.l4":"套装礼盒",
+    "footer.col2.l1":"花样年华赋活系列","footer.col2.l2":"桃颜悦色美白系列","footer.col2.l3":"凝萃芳华抗皱系列","footer.col2.l4":"鲟鱼子酱舒缓系列",
     "footer.col3.title":"信息",
     "footer.col3.l1":"公司动态","footer.col3.l2":"销售渠道","footer.col3.l3":"联系我们","footer.col3.l4":"隐私政策",
     "footer.copy":"© 2026 珂莉安娜 Coorionara. 版权所有。",
@@ -1597,14 +1680,17 @@ const T = {
     "story.stat1":"核心植物成分","story.stat2":"有害添加劑","story.stat3":"產品系列","story.stat4":"支援語言",
 
     "products.kicker":"產品系列","products.h2":"為<em>每一種</em><br/>肌膚故事而生。","products.viewAll":"查看全部產品 →",
-    "products.p1.name":"深層補水精華","products.p1.sub":"水潤系列 · 30ml",
-    "products.p2.name":"光采精華水","products.p2.sub":"亮膚系列 · 150ml",
-    "products.p3.name":"屏障修護面霜","products.p3.sub":"屏障修護 · 50ml",
+    "products.p1.name":"花樣年華賦活系列","products.p1.sub":"賦活 · 多品",
+    "products.p2.name":"桃顏悅色美白系列","products.p2.sub":"美白 · 多品",
+    "products.p3.name":"凝萃芳華抗皺系列","products.p3.sub":"抗皺 · 多品",
+    "products.p4.name":"清潔調肌系列","products.p4.sub":"潔膚 · 調理",
+    "products.p5.name":"肽魅力眼霜","products.p5.sub":"眼部護理 · 30g",
+    "products.p6.name":"鱘魚子醬舒緩系列","products.p6.sub":"舒緩 · 多品",
     "products.tag.best":"熱銷","products.tag.new":"新品",
-    "products.feat.kicker":"明星系列",
-    "products.feat.h3":"空白畫布<br/>護膚禮盒",
-    "products.feat.body":"以極簡主義為原則設計的完整三步晨間護膚儀式。每款產品相互增效，讓您的肌膚達到自然平衡。",
-    "products.feat.cta":"查看套裝詳情 →",
+    "products.feat.kicker":"煥新系列",
+    "products.feat.h3":"膜煥新生<br/>煥膚面膜系列",
+    "products.feat.body":"以韓國留白哲學為靈感，剝去多餘，喚醒肌膚本來的光采。融合發酵植物精華與屏障修護活性成分，給肌膚真正的煥新體驗。",
+    "products.feat.cta":"查看系列詳情 →",
 
     "ing.kicker":"核心成分","ing.h2":"投入什麼，<br/>就<em>收穫</em>什麼。","ing.link":"查看完整配方詳情 →",
     "ing.i1.name":"積雪草<br/><em>提取物</em>","ing.i1.origin":"韓國濟州島",
@@ -1635,7 +1721,7 @@ const T = {
     "footer.col1.title":"品牌",
     "footer.col1.l1":"品牌故事","footer.col1.l2":"品牌哲學","footer.col1.l3":"成分","footer.col1.l4":"永續發展",
     "footer.col2.title":"產品",
-    "footer.col2.l1":"水潤系列","footer.col2.l2":"亮膚系列","footer.col2.l3":"屏障修護系列","footer.col2.l4":"套裝禮盒",
+    "footer.col2.l1":"花樣年華賦活系列","footer.col2.l2":"桃顏悅色美白系列","footer.col2.l3":"凝萃芳華抗皺系列","footer.col2.l4":"鱘魚子醬舒緩系列",
     "footer.col3.title":"資訊",
     "footer.col3.l1":"公司動態","footer.col3.l2":"銷售通路","footer.col3.l3":"聯絡我們","footer.col3.l4":"隱私政策",
     "footer.copy":"© 2026 珂莉安娜 Coorionara. 版權所有。",
